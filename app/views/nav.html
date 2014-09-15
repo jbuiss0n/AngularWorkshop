@@ -1,0 +1,24 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavigationController">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Hello Resto !</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li ng-class="{active: $state.includes('restaurants')}"><a ui-sref="restaurants.list">Restaurants</a></li>
+      <li ng-class="{active: $state.includes('orders')}"><a ui-sref="orders.list">Orders</a></li>
+      <li ui-sref-active="active"><a ui-sref="about">About</a></li>
+    </ul>
+
+    <div class="nav navbar-nav text-muted">
+      <div class="menu-hint" ui-view="hint"></div>
+    </div>
+
+    <form class="nav navbar-form navbar-right" role="currency">
+      <div class="form-group">
+        <label for="currency" class="text-muted">Currency</label>
+        <select id="currency" class="form-control" ng-model="currentCurrency" ng-options="currency.name for currency in currencies"></select>
+      </div>
+    </form>
+  </div>
+</div>

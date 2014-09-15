@@ -1,0 +1,8 @@
+{
+  "id": 1,
+  "name": "Sushi Shop",
+  "menu": [
+    { "name": "California maki", "price": 4.5 },
+    { "name": "Printemps rolls", "price": 5.5 }
+  ]
+}

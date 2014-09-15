@@ -1,0 +1,15 @@
+<!--script type="text/ng-template" id="person-info-full">
+  <p>Hello {{firstname}}, {{lastname}} !</p>
+  <p>You are a {{age}} years old {{gender}} working at {{company}}.</p>
+</script>
+
+<div>
+  <p>Your firstname : <input type="text" ng-model="firstname" /></p>
+  <p>Your lastname : <input type="text" ng-model="lastname" /></p>
+  <p>Your company : <input type="text" ng-model="company" /></p>
+  <p>Your age : <input type="text" ng-model="age" /></p>
+  <p>Your gender : <select ng-model="gender"><option ng-repeat="gender in ['male', 'female']">{{gender}}</option></select></p>
+</div>
+<div>
+  <ng-include src="'person-info-full'"></ng-include>
+</div-->

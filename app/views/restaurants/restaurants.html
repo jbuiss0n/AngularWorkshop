@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="well well-sm">
+      <ul class="nav nav-list">
+        <li ng-class="{ active: $state.includes('restaurants.list') }"><a ui-sref="restaurants.list">All Restaurants</a></li>
+        <li ng-repeat="restaurant in restaurants | limitTo:2" ui-sref-active="active">
+          <a ui-sref="restaurants.detail({ id: restaurant.id })">{{ restaurant.name }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div ui-view class="col-md-6">
+
+  </div>
+
+  <div class="col-md-3 text-center">
+    <h4>Promotion</h4>
+    <div ui-view="promo"></div>
+  </div>
+</div>

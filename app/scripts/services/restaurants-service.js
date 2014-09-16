@@ -5,8 +5,22 @@ angular
     'ngResource'
   ])
 
-  .factory('RestaurantsService', ['$resource', function ($resource) { //Singleton
+  .factory('RestaurantsService', ['$rootScope', '$resource', function ($rootScope, $resource) { //Singleton
+
     return $resource('/mock/restaurants/:id.json');
+
+    var restaurants;
+    var handlers;
+
+    return {
+      query: function (cb) {
+        $http.get('/mock/restaurants.json').then(function(res) {
+          restaurants = res.data
+          cb(restaurants);
+        });
+        return restaurants;
+      }
+    };
   }])
 
   .service('RestaurantModel', [function () { //Instanciate each time
@@ -27,6 +41,7 @@ angular
       return menu.length;
     };
 
+    return this;
   }]);
 
 

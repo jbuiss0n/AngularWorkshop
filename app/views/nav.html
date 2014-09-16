@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">Hello Resto !</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
+      <li ng-class="{active: $state.includes('home')}"><a ui-sref="home">Home</a></li>
       <li ng-class="{active: $state.includes('restaurants')}"><a ui-sref="restaurants.list">Restaurants</a></li>
       <li ng-class="{active: $state.includes('orders')}"><a ui-sref="orders.list">Orders</a></li>
       <li ui-sref-active="active"><a ui-sref="about">About</a></li>
@@ -12,6 +12,10 @@
 
     <div class="nav navbar-nav text-muted">
       <div class="menu-hint" ui-view="hint"></div>
+    </div>
+
+    <div class="nav navbar-nav text-muted">
+      <span ng-notification></span>
     </div>
 
     <form class="nav navbar-form navbar-right" role="currency">

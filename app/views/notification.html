@@ -1,0 +1,5 @@
+<div ng-controller="NotificationController">
+  <div class="alert alert-danger notification" ng-repeat="notification in notifications track by $index">
+    Error at <strong>{{ notification.date | date:'hh:mm:ss.sss' }}</strong> - {{ notification.message }}
+  </div>
+</div>
